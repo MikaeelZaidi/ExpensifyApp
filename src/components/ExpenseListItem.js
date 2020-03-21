@@ -4,7 +4,7 @@ import { removeExpense } from '../actions/expenses'
 import { NavLink } from 'react-router-dom';
 
 
-const ExpenseListItem = ({ id, description, amount, createdAt, dispatch }) => {
+export const ExpenseListItem = ({ id, description, amount, createdAt, dispatch }) => {
 
     return (
         <div>
