@@ -3,6 +3,7 @@
 exports[`This should test the help page 1`] = `
 <div>
   <Connect(ExpenseListFilter) />
+  <ExpenseSummary />
   <Connect(ExpenseList) />
 </div>
 `;

@@ -1,4 +1,9 @@
-import { addExpense, removeExpense, editExpense } from '../../actions/expenses';
+import {startAddExpense , addExpense, removeExpense, editExpense} from '../../actions/expenses';
+import expenses from '../fixtures/expenses';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+
+const createMockStore= configureMockStore([thunk])
 
 test('This should setup remove expense action object', () => {
 
@@ -23,33 +28,47 @@ test('Should test Edit Expense', () => {
 });
 
 test('Should set up add expense action object', () => {
-    const action = addExpense({ description: 'Rent', note: 'Check Rent', amount: 100, createdAt: 10 })
+    const action = addExpense(expenses[2])
 
     expect(action).toEqual({
         type: 'Add_Expense',
-        expense: {
-            id: expect.any(String),
-            description: 'Rent',
-            note: 'Check Rent',
-            amount: 100,
-            createdAt: 10
-        }
+        expense: expenses[2]
     });
 })
 
-test('Should set up add expense action object with defaults', () => {
 
-    const action = addExpense()
-
-    expect(action).toEqual({
-        type: 'Add_Expense',
-        expense: {
-            id: expect.any(String),
-            description: '',
-            note: '',
-            amount: 0,
-            createdAt: 0
-        }
-
+test('Should add expense to data base and store', (done) => {
+    const store = createMockStore({})
+    const expenseData = {
+        description: 'Mouse',
+        amount: 3000,
+        note: 'Lenovo',
+        createdAt: 1000
+    }
+    store.dispatch(startAddExpense(expenseData)).then(()=>{
+        expect(1).toBe(17)
+        done()
     });
-})
+});
+
+
+test('Should add expense with defaults to database and store', () => {
+
+});
+
+// test('Should set up add expense action object with defaults', () => {
+
+//     const action = addExpense()
+
+//     expect(action).toEqual({
+//         type: 'Add_Expense',
+//         expense: {
+//             id: expect.any(String),
+//             description: '',
+//             note: '',
+//             amount: 0,
+//             createdAt: 0
+//         }
+
+//     });
+// })
