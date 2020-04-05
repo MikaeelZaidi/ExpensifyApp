@@ -37,7 +37,7 @@ test('Should set up add expense action object', () => {
 })
 
 
-test('Should add expense to data base and store', (done) => {
+test('Should add expense to data base and store', () => {
     const store = createMockStore({})
     const expenseData = {
         description: 'Mouse',
@@ -47,7 +47,7 @@ test('Should add expense to data base and store', (done) => {
     }
     store.dispatch(startAddExpense(expenseData)).then(()=>{
         expect(1).toBe(17)
-        done()
+        
     });
 });
 
