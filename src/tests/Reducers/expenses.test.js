@@ -47,7 +47,16 @@ test('Should test the Add Expense Obj', () => {
     expect(state).toEqual([...expenses,updates])
 })
 
+test('Should set expenses', () => {
 
+    const action = {
+        type: 'SET_EXPENSES',
+        expenses: [expenses[2]]
+    };
+
+    const state=expensesReducer(expenses,action)
+    expect(state).toEqual([expenses[2]])
+})
 
 // test("Should Edit a valid expense Item", () => {
 //    const amountT=1000
