@@ -1,0 +1,21 @@
+
+.button{
+    color:whitesmoke;
+    background:rgb(200, 204, 252);
+    border:none;
+    padding:10px 5px;
+    text-align: center;
+    display: inline-block;
+    font-size:13px;
+    font-weight:300;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.button--link{
+    background: none;
+}
+
+.button--secondary{
+    background: grey;
+}

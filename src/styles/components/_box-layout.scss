@@ -1,0 +1,22 @@
+.box-layout{
+    background:url('/images/TO.jpg');
+    background-size:cover;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw
+
+}
+
+.box-layout__box{
+    background:fade-out($color:rgb(226, 226, 247), $amount: 0.8);
+    border-radius:4px;
+    width:15rem;
+    text-align: center;
+    padding:$l-size $m-size;
+}
+
+.box-layout__title{
+    margin:0
+}

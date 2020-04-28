@@ -8,8 +8,9 @@ import { connect } from 'react-redux';
 const ExpenseDashBoardPage = (props) => {
     return (
         <div>
-            <ExpenseListFilter />
+          
             <ExpenseSummary />
+            <ExpenseListFilter />
             <ExpenseList/>
         </div>
     )
